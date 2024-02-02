@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Node {
+            constructor(value) {
+                this.value = value
+                this.next = null
+                this.prev = null
+            }
+        }
+
+        class Linked {
+            constructor() {
+                this.head = null
+            }
+
+            insert(value) {
+                const newNode = new Node(value)
+                if (!this.head) {
+                    this.head = newNode
+                } else {
+                    this.insertHelper(this.head, newNode)
+                }
+            }
+            insertHelper(node, newNode) {
+                if (node.next == null) {
+                    newNode.prev = node
+                    node.next = newNode 
+                } else {
+                    this.insertHelper(node.next, newNode)
+                }
+            }
+
+            delete(value) {
+                if (!this.head) return false
+                else if (this.head.value == value) {
+                    if (this.head.next) this.head = this.head.next
+                    else this.head = null
+                }
+                else this.deleteHelper(this.head, value)
+            }
+            deleteHelper(node, value) {
+                if (!node.next.value) return false
+                else if (node.next.value == value) {
+                    node.next.next.prev = node
+                    node.next = node.next.next
+                }
+                else this.deleteHelper(node.next, value)
+            }
+        }
+
+        const list = new Linked()
+        list.insert(100)
+        list.insert(200)
+        list.insert(400)
+        list.insert(240)
+        list.delete(200)
+        console.log(list);
+    </script>
+</body>
+
+</html>
