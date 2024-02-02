@@ -9,61 +9,110 @@
 
 <body>
     <script>
-        class Node {
-            constructor(value) {
-                this.value = value
-                this.next = null
-                this.prev = null
+        // class Node {
+        //     constructor(value) {
+        //         this.value = value
+        //         this.next = null
+        //         this.prev = null
+        //     }
+        // }
+
+        // class Linked {
+        //     constructor() {
+        //         this.head = null
+        //     }
+
+        //     insert(value) {
+        //         const newNode = new Node(value)
+        //         if (!this.head) {
+        //             this.head = newNode
+        //         } else {
+        //             this.insertHelper(this.head, newNode)
+        //         }
+        //     }
+        //     insertHelper(node, newNode) {
+        //         if (node.next == null) {
+        //             newNode.prev = node
+        //             node.next = newNode
+        //         } else {
+        //             this.insertHelper(node.next, newNode)
+        //         }
+        //     }
+        //     insertIn(value, ref) {
+        //         let newNode = new Node(value)
+        //         console.log(this.head);
+        //         if (this.head.value == ref) {
+        //             this.head.next = newNode
+        //         } else {
+        //            return this.insertInHelper(this.head, newNode, ref)
+        //         }
+        //     }
+
+        //     insertInHelper(node, newNode, ref) {
+        //         if(!node) return "no ref found"
+        //         if (node.value == ref) {
+        //             newNode.next = node.next
+        //             newNode.prev = node
+        //             node.next = newNode
+        //         } else {
+        //             return this.insertInHelper(node.next,newNode,ref)
+        //         }
+        //     }
+
+        //     delete(value) {
+        //         if (!this.head) return false
+        //         else if (this.head.value == value) {
+        //             if (this.head.next) this.head = this.head.next
+        //             else this.head = null
+        //         }
+        //         else this.deleteHelper(this.head, value)
+        //     }
+        //     deleteHelper(node, value) {
+        //         if (!node.next.value) return false
+        //         else if (node.next.value == value) {
+        //             node.next.next.prev = node
+        //             node.next = node.next.next
+        //         }
+        //         else this.deleteHelper(node.next, value)
+        //     }
+
+        //     reverse(){
+        //         let curr = this.head
+        //         let prev = null
+        //         while(curr){
+        //             let next = curr.next
+        //             curr.next = prev
+        //             prev = curr
+        //             curr = next
+        //         }
+        //         this.head = prev
+        //     }
+        // }
+
+        // const list = new Linked()
+        // list.insert(100)
+        // list.insert(200)
+        // list.insert(400)
+        // list.insert(240)
+        // list.delete(200)
+        // list.reverse()
+        // console.log(list);
+
+        const arr = [1, 32, 5, 7, 89, 5, 3, 2]
+        function binary(arr, low = 0, high = arr.length - 1, target) {
+            if (low < high) {
+
+                let mid = Math.floor((low + high) / 2)
+                if (arr[mid] == target) return mid
+                else if (arr[mid] < target) return binary(arr, low, mid, target)
+                else return binary(arr, mid + 1, high, target)
+            }else{
+                return false
             }
         }
-
-        class Linked {
-            constructor() {
-                this.head = null
-            }
-
-            insert(value) {
-                const newNode = new Node(value)
-                if (!this.head) {
-                    this.head = newNode
-                } else {
-                    this.insertHelper(this.head, newNode)
-                }
-            }
-            insertHelper(node, newNode) {
-                if (node.next == null) {
-                    newNode.prev = node
-                    node.next = newNode 
-                } else {
-                    this.insertHelper(node.next, newNode)
-                }
-            }
-
-            delete(value) {
-                if (!this.head) return false
-                else if (this.head.value == value) {
-                    if (this.head.next) this.head = this.head.next
-                    else this.head = null
-                }
-                else this.deleteHelper(this.head, value)
-            }
-            deleteHelper(node, value) {
-                if (!node.next.value) return false
-                else if (node.next.value == value) {
-                    node.next.next.prev = node
-                    node.next = node.next.next
-                }
-                else this.deleteHelper(node.next, value)
-            }
-        }
-
-        const list = new Linked()
-        list.insert(100)
-        list.insert(200)
-        list.insert(400)
-        list.insert(240)
-        list.delete(200)
-        console.log(list);
+        let target = 11
+        let result = binary(arr, 0, arr.length - 1, target)
+        console.log(result);
     </script>
 </body>
 
