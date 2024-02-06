@@ -188,14 +188,354 @@
         //     }
         // }
 
+        // function mergeSort(arr, start = 0, end = arr.length - 1) {
+        //     if (start < end) {
+        //         let mid = Math.floor((start + end) / 2)
+        //         mergeSort(arr, start, mid)
+        //         mergeSort(arr, mid + 1, end)
+        //         merge(arr, start, mid, end)
+        //     }
+        // }
 
+        // function merge(arr, start, mid, end) {
+        //     let i = start
+        //     let j = mid+1
+        //     let k = start
+        //     let b = []
+        //     while (i <= mid && j <= end) {
+        //         if (arr[i] < arr[j]) {
+        //             b[k] = arr[i]
+        //             i++
+        //         }else{
+        //             b[k]=arr[j]
+        //             j++
+        //         }
+        //         k++
+        //     }
+        //         while(j<=end){
+        //             b[k]=arr[j]
+        //             j++
+        //             k++
+        //         }
 
+        //         while(i<=mid){
+        //             b[k]=arr[i]
+        //             i++
+        //             k++
+        //         }
 
-        const arr = [1, 32, 5, 7, 3, 5, 2, 89];
-        quick(arr)
+        //     for(let k = start;k<end;k++){
+        //         arr[k]= b[k]
+        //     }
+        // }
 
+        // const arr = [1, 32, 5, 7, 3, 5, 2, 89];
+        // mergeSort(arr)
 
-        document.getElementById("data").innerHTML = arr    
+        // class HashTable{
+        //     constructor(size=100){
+        //         this.size = size
+        //         this.table = new Array(size)
+        //     }
+        //     hash(key){
+        //         let hashvalue = 0
+        //         for(let i = 0;i<key.length;i++){
+        //             hashvalue+=key.charCodeAt(i)
+        //         }
+        //         return hashvalue%this.size
+        //     }
+        //     insert(key,value){
+        //         let ind = this.hash(key)
+        //         if(!this.table[ind]){
+        //             this.table[ind]=[]
+        //         }
+        //         this.table[ind].push({key,value})
+        //     }
+
+        //     get(key){
+        //         const ind = this.hash(key)
+        //         if(this.table[ind]){
+        //             for(const entry of this.table[ind]){
+        //                 if(entry.key==key){
+        //                     return entry.value
+        //                 }
+        //             }
+        //         }else{
+        //             return "Npt found"
+        //         }
+        //     }
+
+        //     remove(key){
+        //         let ind = this.hash(key)
+        //         if(this.table[ind]){
+        //            this.table[ind] = this.table[ind].filter(el => el.key!==key)
+        //         }
+        //     }
+        // }
+        // let tab = new HashTable(20)
+        // tab.insert("sreeraj",10)
+        // tab.insert("sreeji",20)
+        // tab.insert("srejei",30)
+        // tab.insert("sreehari",10)
+        // tab.remove("srejei")     
+        // class Node {
+        //     constructor(value) {
+        //         this.value = value
+        //         this.left = null
+        //         this.right = null
+        //     }
+        // }
+        // class Tree {
+        //     constructor() {
+        //         this.root = null
+        //     }
+
+        //     insert(value) {
+        //         let newNode = new Node(value)
+        //         if (!this.root) this.root = newNode
+        //         else this.insertHelper(this.root, newNode)
+        //     }
+        //     insertHelper(node, newNode) {
+        //         if (newNode.value < node.value) {
+        //             if (!node.left) node.left = newNode
+        //             else this.insertHelper(node.left, newNode)
+        //         } else {
+        //             if (!node.right) node.right = newNode
+        //             else this.insertHelper(node.right, newNode)
+        //         }
+        //     }
+        //     contains(value) {
+        //         if (!this.root) return false
+        //         else return this.containHelper(this.root, value)
+        //     }
+        //     containHelper(node, value) {
+        //         if (!node) return false
+        //         if (node.value === value) return true
+        //         else if (value < node.value) return this.containHelper(node.left, value)
+        //         else return this.containHelper(node.right, value)
+        //     }
+        // }
+        //     delete(value) {
+        //         this.deleteHelper(this.root, value)
+        //     }
+        //     deleteHelper(root, value) {
+        //         if (!root) return
+        //         if (value < root.value) root.left = this.deleteHelper(root.left, value)
+        //         else if (value > root.value) root.right = this.deleteHelper(root.right, value)
+        //         else {
+        //             if (!root.left) return root.right
+        //             else if (!root.right) return root.left
+
+        //             root.value = this.findMin(root.right)
+        //             root.right = this.deleteHelper(root.right, root.value)
+
+        //         }
+        //         return root
+
+        //     }
+        //     findMin(node) {
+        //         while (!node) {
+        //             node = node.left
+        //         }
+        //         return node.value
+        //     }
+
+        //     inOrder() {
+        //         this.inOrderHelper(this.node)
+        //     }
+        //     inOrderHelper(node) {
+        //         if (node) {
+        //             this.inOrderHelper(node.left)
+        //             console.log(node.value);
+        //             this.inOrderHelper(node.right)
+        //         }
+        //     }
+
+        //     pre() {
+        //         this.preOrderHelper(this.root)
+        //     }
+        //     preOrderHelper(node) {
+        //         if (node) {
+        //             console.log(node.value);
+        //             this.preOrderHelper(node.left)
+        //             this.preOrderHelper(node.right)
+        //         }
+        //     }
+
+        //     post() {
+        //         this.postOrderHelper(this.root)
+        //     }
+        //     postOrderHelper(node) {
+        //         if (node) {
+        //             this.postOrderHelper(node.left)
+        //             this.postOrderHelper(node.right)
+        //             console.log(node.value);
+        //         }
+        //     }
+
+        //     // closest(target) {
+        //     //     if (!this.root) return null
+        //     //     let close = this.root.value
+        //     //     const findClose = (node) => {
+        //     //         if (!node) return
+        //     //         if (Math.abs(node.value - target < Math.abs(close - target))) close = node.value
+        //     //         if (target < node.value) findClose(node.left)
+        //     //         else if (target > node.value) findClose(node.right)
+        //     //         else close = node.value
+        //     //     }
+        //     //     findClose(this.root)
+        //     //     return close
+        //     // }
+        //     closest(target) {
+        //         if (!this.root) return
+        //         let close = null
+        //         const findClose = (root, target) => {
+        //             if (!root) return
+        //             if (Math.abs(root.value - target) < Math.abs(close - target)) close = root.value
+        //             if (target < root.value) findClose(root.left, target)
+        //             else if (target > root.value) findClose(root.right, target)
+        //         }
+
+        //         findClose(this.root,target)
+        //         return close
+        //     }
+
+        //     isBst(){
+        //         return this.bstHelper(this.root,-Infinity,Infinity)
+        //     }
+
+        //     bstHelper(node,min,max){
+        //         if(!node)return true
+        //         if(node.value<=min||node.data>=max)return false
+        //         return (
+        //             this.bstHelper(node.left,min,node.value),
+        //             this.bstHelper(node.right,node.value,max)
+        //         )
+        //     }
+        // }
+        // let tr = new Tree()
+        // tr.insert(100)
+        // tr.insert(200)
+        // tr.insert(300)
+        // tr.insert(240)
+        // tr.insert(40)
+        // let b = tr.isBst()
+        // console.log(b);
+        // tr.delete(240)
+        // tr.inOrder()
+        // console.log(tr.closest(240));
+        // console.log(tr);   
+
+//         class MaxHeap {
+//             constructor() {
+//                 this.heap = []
+//             }
+
+//             insert(value) {
+//                 this.heap.push(value)
+//                 this.heapifyUp(this.heap.length - 1)
+//             }
+
+//             heapifyUp(index) {
+//                 if (index == 0) return
+//                 const par = Math.floor((index - 1) / 2)
+//                 if (this.heap[par] < this.heap[index]) {
+//                     [this.heap[par], this.heap[index]] = [this.heap[index], this.heap[par]]
+//                     this.heapifyUp(par)
+//                 }
+//             }
+
+//             extract() {
+//                 if (this.heap.length == 0) {
+//                     return null
+//                 }
+//                 const max = this.heap[0]
+//                 const last = this.heap.pop()
+
+//                 if (this.heap.length > 0) {
+//                     this.heap[0] = last
+//                     this.heapifyDown(0)
+//                 }
+//                 return max
+//             }
+
+//             heapifyDown(index){
+//                 let left = index*2+1
+//                 let right = index*2+2
+//                 let max = index
+//                 if(this.heap[index]<this.heap[left] && left<this.heap.length)max=left
+//                 if(this.heap[index]<this.heap[right] && right<this.heap.length)max=right
+//                 if(max != index){
+//                     [this.heap[index],this.heap[max]]=[this.heap[max],this.heap[index]]
+//                     this.heapifyDown(max)
+//                 }
+//             }
+//         }
+
+//         const maxHeap = new MaxHeap();
+// maxHeap.insert(100);
+// maxHeap.insert(19);
+// maxHeap.insert(36);
+// maxHeap.insert(17);
+// maxHeap.insert(3);
+// maxHeap.insert(25);
+// maxHeap.insert(1);
+// maxHeap.insert(2);
+// maxHeap.insert(7);
+// maxHeap.insert(5);
+// maxHeap.insert(9);
+
+// console.log('Max Heap:', maxHeap.heap);
+// console.log('Extracted Max:', maxHeap.extract());
+// console.log('Max Heap after extraction:', maxHeap.heap);
+
+// class que{
+//     constructor(capacity){
+//         this.capacity = capacity
+//         this.queue = new Array(capacity)
+//         this.head= 0
+//         this.tail= -1
+//         this.size = 0
+//     }
+//     isEmplty(){
+//         return this.size==0
+//     }
+//     isFull(){
+//         return this.size==this.capacity
+//     }
+//     enqueue(value){
+//         if(this.isFull()){
+//             console.log("queue full");
+//             return 
+//         }
+//         this.tail = (this.tail+1)%this.capacity
+//         this.queue[this.tail] = value
+//         this.size++
+//     }
+//     dequeue(){
+//         if(this.isEmplty()){
+//             console.log("queue empty");
+//             return
+//         }
+//         const dequeueElem = this.queue[this.head]
+//         this.queue[this.head]=null
+//         this.head = (this.head+1)%this.capacity
+//         this.size--
+//         return dequeueElem
+//     }
+// }
+// const circularQueue = new que(5);
+// circularQueue.enqueue(1);
+// circularQueue.enqueue(2);
+// circularQueue.enqueue(3);
+// // console.log("Front element:", circularQueue.peek()); // Output: 1
+// console.log("Dequeued element:", circularQueue.dequeue()); // Output: 1
+// console.log("Dequeued element:", circularQueue.dequeue()); // Output: 1
+// circularQueue.enqueue(4);
+// circularQueue.enqueue(5);
+// circularQueue.enqueue(6);
+// circularQueue.enqueue(7);
+// console.log(circularQueue);
     </script>
 
 </body>
